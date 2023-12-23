@@ -1,0 +1,21 @@
+string reverseOrderWords(string str) {
+    // Write your code here
+    int i=0,e=0;
+    int n=str.size();
+    while(true){
+        if(e>=n){break;}
+        while(str[e]!=' '&& str[e]!='\0'){e++;}
+        int a=e+1;
+        e=e-1;
+        while(i<e){swap(str[i],str[e]); i++; e--;}
+        i=a;
+        e=i;
+    }
+    i=0;
+    e=n-1;
+    while(i<e){
+        swap(str[i],str[e]);
+        i++; e--;
+    }
+    return str;
+}
